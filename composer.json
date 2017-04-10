@@ -1,0 +1,19 @@
+{
+    "name":"DRIK/mvc",
+    "require":{
+        "php":">=5.6"
+    },
+
+    "author":[{
+        "name":"Iorgen Wildrik",
+        "email":"w.drik@outlook.com"
+    }],
+
+    "autoload":{
+        "psr-4":{
+            "DRIK\\":"vendor/DRIK/",
+            "App\\":"App/"
+        }
+    }
+
+}
