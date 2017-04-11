@@ -2,17 +2,23 @@
 
 namespace App\Controllers;
 
-class indexController
-{
+use DRIK\Controller\Action;
 
+class indexController extends Action
+{
     public function index()
     {
-        echo "Route / Controller: index";
+        $this->view->cars = array("Palio", "Peugeot");
+        $this->render('index');
+
     }
 
     public function contact()
     {
-        echo "Route /contact Controller: contact";
+        $this->view->cars = array("Palio", "Peugeot");
+        $this->render('contact');
     }
+
+
 
 }
