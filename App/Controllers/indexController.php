@@ -3,22 +3,23 @@
 namespace App\Controllers;
 
 use DRIK\Controller\Action;
+use DRIK\DI\Container;
 
-class indexController extends Action
+class IndexController extends Action
 {
     public function index()
     {
-        $this->view->cars = array("Palio", "Peugeot");
-        $this->render('index');
+        $client = Container::getModel("Clients");
+        $this->views->clients = $client->fetchAll();
 
+        $this->render("index");
     }
-
+    
     public function contact()
     {
-        $this->view->cars = array("Palio", "Peugeot");
-        $this->render('contact');
+        $client = Container::getModel("Clients");
+        $this->views->clients = $client->find(5);
+
+        $this->render("contact"); // False para não utilizar o layout padrão!
     }
-
-
-
 }

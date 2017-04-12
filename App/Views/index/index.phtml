@@ -1,7 +1,23 @@
-Route / Controller: IndexController Action: index.phtml
+<br><h2>Route / Controller: IndexController Action: index.phtml</h2><br><br>
 
-<br>
+<h2>List of clients</h2><br>
 
-<?php foreach ($this->view->cars as $car):?>
-    <p><?= $car ?></p><hr>
-<?php endforeach; ?>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+
+        <tr>
+            <td><b>Id:</b></td>
+            <td><b>Nome:</b></td>
+            <td><b>E-mail:</b></td>
+        </tr>
+
+        <?php foreach ($this->views->clients as $client): ?>
+            <tr>
+                <td><?= $client['id'] ?></td>
+                <td><?= $client['nome'] ?></td>
+                <td><?= $client['email'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+
+    </table>
+</div>
